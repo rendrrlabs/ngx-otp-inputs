@@ -1,0 +1,16 @@
+<div class="__otp-wrapper" *ngIf="otpConfig">
+    <label *ngIf="otpConfig?.showLabel">{{otpConfig?.label}}</label>
+    <div class="__otp-input-group">
+        <div class="__otp-form-control" *ngFor="let control of inputForm.controls; let i = index">
+            <input
+                [id]="inputIds[i]"
+                [formControl]="control"
+                type="text"
+                class="__otp-form-input"
+                [ngClass]="[otpConfig?.classList?.input]"
+                maxlength="1"
+                (keyup)="otpOnKeyUp(control, $event, i)"
+                (focus)="otpOnFocus(control, $event, i)">
+        </div>
+    </div>
+</div>
