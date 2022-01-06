@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgxOtpConfig } from 'ngx-otp-inputs';
-import { NgxOtpEvent } from 'projects/ngx-otp-inputs/src/public-api';
+import { NgxOtpConfig, NgxOtpEvent } from 'ngx-otp-inputs';
 
 @Component({
   selector: 'app-root',

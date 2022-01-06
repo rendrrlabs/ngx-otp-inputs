@@ -22,7 +22,7 @@ export class NgxOtpInputsComponent implements OnInit {
   }
   
   otpConfig: NgxOtpConfig = {
-    otpLength: 4,
+    otpLength: 6,
     autoFocus: true,
     autoblur: true,
     inputType: OtpInputTypes.number,
@@ -41,6 +41,8 @@ export class NgxOtpInputsComponent implements OnInit {
     this.initForm();
   }
 
+  @Input() config2: any;
+
   @Input() set disabled(c: boolean) {
     this.inputDisabled = c;
   }
@@ -49,11 +51,11 @@ export class NgxOtpInputsComponent implements OnInit {
   @Output()  onOtpFilled = new EventEmitter<any>();
 
   constructor(private _fb: FormBuilder) {
-    
+    console.log(this.otpConfig, this.config2, "otpConfig-config2-cust");
   }
 
   ngOnInit(): void {
-    console.log(this.otpConfig, "otpConfig");
+    console.log(this.otpConfig, this.config2, "otpConfig-config2");
   }
 
   initForm(){
